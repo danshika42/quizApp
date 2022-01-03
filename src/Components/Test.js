@@ -152,7 +152,7 @@ function Test() {
             <button  onClick={()=>index!=0 && setIndex(index-1) }>Previous</button>
             <button  onClick={()=>index<questions.length-1 && setIndex(index+1) }>Next</button>
             <button  onClick={()=>scoreArr[index]=false }>Clear</button>
-            <NavLink to='/end' >Submit The Test</NavLink>
+            <NavLink to='/quizApp/end' >Submit The Test</NavLink>
         </div>
   )
 

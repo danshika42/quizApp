@@ -10,9 +10,9 @@ function App() {
     <ScoreProvider>
       <div className="App">
         <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/test' element={<Test/>}/>
-          <Route path='/end' element={<End/>} />
+          <Route path='/quizApp' element={<Home/>} />
+          <Route path='quizApp/test' element={<Test/>}/>
+          <Route path='quizApp/end' element={<End/>} />
         </Routes>
       </div>
     </ScoreProvider>

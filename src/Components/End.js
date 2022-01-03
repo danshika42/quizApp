@@ -9,7 +9,7 @@ function End() {
         <div>
             <h1>Your score {score}</h1>
             <button onClick={()=>{handleScore()}}>Score</button>
-            <NavLink  to='/' >Retry</NavLink>
+            <NavLink  to='/quizApp' >Retry</NavLink>
         </div>
     )
 }

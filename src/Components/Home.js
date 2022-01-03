@@ -6,7 +6,7 @@ function Home() {
     return (
         <div>
             <h1>Begin Test</h1>
-            <NavLink to='/test' >Start the test</NavLink>
+            <NavLink to='test' >Start the test</NavLink>
         </div>
     )
 }
