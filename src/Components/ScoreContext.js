@@ -6,6 +6,8 @@ export const ScoreContext= createContext();
 
 export function ScoreProvider(props){
     const scoreArr=[false,false,false,false,false,false,false];
+    
+
     var count=0;
     const [score,setscore]=useState(0);
 
