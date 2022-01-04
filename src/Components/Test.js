@@ -331,7 +331,7 @@ function Test() {
             <br/>
               {
                 questions.map(question=>
-                  <button className='Test-button'  style={{backgroundColor:question.isFlagged?'#f0ad4e':question.questionAttempted?'#4CAF50':'cadetblue'}}  onClick={(e)=>{setIndex(e.target.value-1)}} value={question.questionNo}>{question.questionNo}</button>
+                  <button className='Test-button'  style={{backgroundColor:question.isFlagged?'#BF40BF':question.questionAttempted?'#4CAF50':'cadetblue'}}  onClick={(e)=>{setIndex(e.target.value-1)}} value={question.questionNo}>{question.questionNo}</button>
                 )
               }
         </div>
