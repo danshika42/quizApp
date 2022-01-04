@@ -3,7 +3,6 @@ import Question from './Question'
 import {NavLink} from 'react-router-dom'
 import {ScoreContext} from './ScoreContext'
 import swal from 'sweetalert';
-import './Color.css'
 import './Test.css'
 
 
@@ -321,7 +320,7 @@ function Test() {
               </div>
             </React.Fragment>
             <span className='Test-index'>{`${index+1}/${questions.length}`}</span>
-            <Question question={questions[index]} index={index}/><br/>
+            <Question question={questions[index]} index={index}/>
             <button className='Test-chevron-p' onClick={()=>index!=0 && setIndex(index-1) }><i class="fas fa-chevron-left"></i></button>
             <button className='Test-chevron-n'onClick={()=>index<questions.length-1 && setIndex(index+1) }><i class="fas fa-chevron-right"></i></button><br/>
             <button className='Test-clear' onClick={()=>handleIndex()}><i class="fas fa-broom"></i>    Clear</button>
@@ -329,7 +328,6 @@ function Test() {
             <button className='Test-submit' onClick={()=>{setToggle(!toggle) ; swal("Quiz Submitted!", {
               icon: "success",
             }); }} >submit</button>
-            <br/>
             <br/>
               {
                 questions.map(question=>

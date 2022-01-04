@@ -1,20 +1,14 @@
 .Question-text{
-    font-size: 1.7rem;
+    font-size: 1rem;
 }
 .Question-option{
     color: #fff;
     border-radius: 0.3rem;
-    padding: 12px 24px;
-    font-size: 1.5rem;
+    padding: 8px 16px;
+    font-size: 1rem;
     border: none;
 }
 .Question-list{
     list-style: none;
-    margin-top: 44px;
-}
-
-@media (max-width:550px){
-    .Question-text{
-        font-size: 1.3rem;
-    }
+    margin:12px 0 12px 0;
 }
