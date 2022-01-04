@@ -2,7 +2,9 @@ import React ,{useContext,useState,useEffect} from 'react'
 import Question from './Question'
 import {NavLink} from 'react-router-dom'
 import {ScoreContext} from './ScoreContext'
+import swal from 'sweetalert';
 import './Color.css'
+import './Test.css'
 
 
 
@@ -132,7 +134,7 @@ let questions = [
 
 
 function Test() {
-  const {handleScore,scoreArr,score} =useContext(ScoreContext);
+  const {handleScore,scoreArr,score,name} =useContext(ScoreContext);
   
   const [index,setIndex]=useState(0);
   
@@ -158,6 +160,7 @@ function Test() {
   const [toggle,setToggle]=useState(false);
   useEffect(()=>{
     handleScore();
+   
     questions= [
       {
         questionText: 'Who is Prime Minister of India?',
@@ -294,43 +297,43 @@ function Test() {
   
   
   if(toggle){
+    
     return(
       <>
-            <h1>Your score {score}</h1>
-            <NavLink  to='/quizApp' >Retry</NavLink>
+            <h1 className='Test-end'> {name==''?'No Name 🥱':name} ,Your score {score}</h1>
+            <NavLink className='Test-retry'  to='/quizApp' >Retry</NavLink>
       </>
     )
   }
   return (
-        <div>
-            <h1>Test</h1>
-            <p>{`${index+1}/${questions.length}`}</p>
-           
+        <div className='Test'>           
             <React.Fragment>
-              <div className='wrapper'>
+              <div className='Test-wrapper'>
                   { minutes === 0 && seconds === 0 ? (
                       <React.Fragment>
                         {setToggle(!toggle)}
                       </React.Fragment>
                   ) : (
                       <React.Fragment>
-                          <h1>{minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
+                          <h1 className='Test-clock'>{minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
                       </React.Fragment>
                   )}
               </div>
             </React.Fragment>
-            
+            <span className='Test-index'>{`${index+1}/${questions.length}`}</span>
             <Question question={questions[index]} index={index}/><br/>
-            <button onClick={()=>index!=0 && setIndex(index-1) }>Previous</button><br/>
-            <button onClick={()=>index<questions.length-1 && setIndex(index+1) }>Next</button><br/>
-            <button onClick={()=>handleIndex()}>Clear</button><br/>
-            <button onClick={()=>{questions[index].isFlagged=true}}>Flag</button>
-            <button onClick={()=>setToggle(!toggle)} >submit</button>
+            <button className='Test-chevron-p' onClick={()=>index!=0 && setIndex(index-1) }><i class="fas fa-chevron-left"></i></button>
+            <button className='Test-chevron-n'onClick={()=>index<questions.length-1 && setIndex(index+1) }><i class="fas fa-chevron-right"></i></button><br/>
+            <button className='Test-clear' onClick={()=>handleIndex()}><i class="fas fa-broom"></i>    Clear</button>
+            <button className='Test-flag' onClick={()=>{questions[index].isFlagged=!questions[index].isFlagged}}><i class="far fa-flag"></i>    Flag</button><br/>
+            <button className='Test-submit' onClick={()=>{setToggle(!toggle) ; swal("Quiz Submitted!", {
+              icon: "success",
+            }); }} >submit</button>
             <br/>
             <br/>
               {
                 questions.map(question=>
-                  <button className={question.isFlagged?'review':question.questionAttempted?'marked':''} onClick={(e)=>{setIndex(e.target.value-1)}} value={question.questionNo}>{question.questionNo}</button>
+                  <button className='Test-button'  style={{backgroundColor:question.isFlagged?'purple':question.questionAttempted?'#4CAF50':'cadetblue'}}  onClick={(e)=>{setIndex(e.target.value-1)}} value={question.questionNo}>{question.questionNo}</button>
                 )
               }
         </div>

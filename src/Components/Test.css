@@ -1,0 +1,65 @@
+.Test-wrapper{
+    margin: 40px;
+}
+
+.Test-clock{
+    font-size: 3rem;
+}
+.Test-index{
+    border: 2px solid cadetblue;
+    border-radius: 0.3rem;
+    padding: 8px;
+    font-size: 1.7rem;
+    margin-right: 20px;
+}
+.Test-chevron-p,.Test-chevron-n,.Test-flag,.Test-clear{
+    background: none;
+    border: 2px solid cadetblue;
+    border-radius: 0.3rem;
+    padding: 8px 19px;
+    font-size: 1.7rem;
+    color: #fff;
+    margin-bottom: 40px;
+}
+.Test-chevron-p,.Test-clear{
+    margin-right: 28px;
+}
+
+.Test-submit{
+    color: #fff;
+    border-radius: 0.3rem;
+    padding: 12px 24px;
+    font-size: 1.5rem;
+    border: none;
+    background-color: #d9534f;
+}
+.Test-button{
+    color: #fff;
+    border-radius: 0.3rem;
+    padding: 12px 24px;
+    font-size: 1.5rem;
+    border: none;
+    margin:0 20px 20px 0;
+}
+
+.Test-end{
+    margin: 48px;
+}
+
+.Test-retry{
+    color: #fff;
+    border-radius: 0.3rem;
+    padding: 12px 24px;
+    font-size: 1.5rem;
+    border: none;
+    margin-right: 20px;
+    background-color: cadetblue;
+    text-decoration: none;
+}
+
+@media (max-width:550px){
+    .Test-index{
+        font-size: 1.3rem;
+        margin-right: 12px;
+    }
+}

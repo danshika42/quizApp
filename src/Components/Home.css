@@ -1,0 +1,30 @@
+.Home-heading1{
+    background-color: cadetblue;
+    padding: 12px 0;
+    text-align: center;
+}
+.Home-heading2{
+    padding: 16px;
+    margin-top: 20px;
+}
+.Home-input{
+    padding: 12px 23px;
+    border: solid 2px cadetblue;;
+    border-radius: 0.3rem;
+    background: none;
+    margin: 24px 0 48px 0;
+}
+.Home-input::placeholder,.Home-input:focus{
+    color: #fff;
+    font-family: 'Sen', sans-serif;
+    font-size: 1rem;
+}
+
+.Home-start{
+    text-decoration: none;
+    color: #fff;
+    background-color: cadetblue;
+    border-radius: 0.3rem;
+    padding: 12px 24px;
+    font-size: 1.5rem;
+}

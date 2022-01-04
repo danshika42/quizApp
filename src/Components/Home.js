@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {NavLink} from 'react-router-dom'
+import {ScoreContext} from './ScoreContext'
+
 
 
 function Home() {
+    const {handleName,name}=useContext(ScoreContext);
     return (
-        <div>
-            <h1>Begin Test</h1>
-            <NavLink to='test' >Start the test</NavLink>
+        <div className='Home'>
+            <h1  className='Home-heading2'>Hola! {name!=''?name:'User'}</h1>
+            <input className='Home-input' type='text' 
+                    placeholder='Enter your name'
+                    value={name}
+                    onChange={(e)=>handleName(e.target.value)} /><br/>
+            <NavLink  className='Home-start' to='test' >Start</NavLink>
         </div>
     )
 }
