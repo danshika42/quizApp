@@ -3,7 +3,7 @@
 }
 
 .Test-clock{
-    font-size: 2rem;
+    font-size: 2.3rem;
 }
 .Test-index{
     border: 2px solid cadetblue;
@@ -19,7 +19,7 @@
     padding: 4px 8px;
     font-size: 1.2rem;
     color: #fff;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 .Test-chevron-p,.Test-clear{
     margin-right: 28px;
@@ -32,7 +32,7 @@
     font-size: 1rem;
     border: none;
     background-color: #d9534f;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 .Test-button{
     color: #fff;
@@ -40,7 +40,7 @@
     padding: 8px 16px;
     font-size: 1.5rem;
     border: none;
-    margin:0 8px 8px 0;
+    margin:0 16px 16px 0;
 }
 
 .Test-end{
