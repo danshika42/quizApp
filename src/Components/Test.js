@@ -289,7 +289,7 @@ function Test() {
     questions[index].questionAttempted=false
     
     questions[index].answerOptions.map(ansOpt=>{
-      if(ansOpt.isAttempted) 
+      // if(ansOpt.isAttempted) 
         ansOpt.isAttempted=false
     })
   }
@@ -319,19 +319,48 @@ function Test() {
                   )}
               </div>
             </React.Fragment>
+           
             <span className='Test-index'>{`${index+1}/${questions.length}`}</span>
+           
             <Question question={questions[index]} index={index}/>
-            <button className='Test-chevron-p' onClick={()=>index!=0 && setIndex(index-1) }><i class="fas fa-chevron-left"></i></button>
-            <button className='Test-chevron-n'onClick={()=>index<questions.length-1 && setIndex(index+1) }><i class="fas fa-chevron-right"></i></button><br/>
-            <button className='Test-clear' onClick={()=>handleIndex()}><i class="fas fa-broom"></i>    Clear</button>
-            <button className='Test-flag' onClick={()=>{questions[index].isFlagged=!questions[index].isFlagged}}><i class="far fa-flag"></i>    Flag</button><br/>
+           
+            <button 
+                className='Test-chevron-p' 
+                onClick={()=>index!=0 && setIndex(index-1) }>
+                  <i class="fas fa-chevron-left"></i>
+            </button>
+           
+            <button 
+                className='Test-chevron-n'
+                onClick={()=>index<questions.length-1 && setIndex(index+1) }>
+                  <i class="fas fa-chevron-right"></i>
+            </button><br/>
+           
+            <button 
+                className='Test-clear' 
+                onClick={()=>handleIndex()}>
+                  <i class="fas fa-broom"></i>Clear
+            </button>
+            
+            <button 
+                className='Test-flag' 
+                onClick={()=>{questions[index].isFlagged=!questions[index].isFlagged}}>
+                  <i class="far fa-flag"></i>Flag
+            </button><br/>
+           
             <button className='Test-submit' onClick={()=>{setToggle(!toggle) ; swal("Quiz Submitted!", {
               icon: "success",
             }); }} >submit</button>
             <br/>
               {
                 questions.map(question=>
-                  <button className='Test-button'  style={{backgroundColor:question.isFlagged?'#BF40BF':question.questionAttempted?'#4CAF50':'cadetblue'}}  onClick={(e)=>{setIndex(e.target.value-1)}} value={question.questionNo}>{question.questionNo}</button>
+                  <button 
+                      className='Test-button'  
+                      style={{backgroundColor:question.isFlagged?'#BF40BF':question.questionAttempted?'#4CAF50':'cadetblue'}}  
+                      onClick={(e)=>{setIndex(e.target.value-1)}} 
+                      value={question.questionNo}>
+                        {question.questionNo}
+                  </button>
                 )
               }
         </div>

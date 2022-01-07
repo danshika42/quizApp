@@ -10,7 +10,7 @@ export function ScoreProvider(props){
         setName(nameVal);
     }
     const scoreArr=[false,false,false,false,false,false,false];
-    var count=0;
+    let count=0;
     const [score,setscore]=useState(0);
     const handleScore=()=>{
          for(var i=0;i<scoreArr.length;i++){
