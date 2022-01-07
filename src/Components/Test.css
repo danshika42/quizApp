@@ -20,6 +20,7 @@
     font-size: 1.2rem;
     color: #fff;
     margin-bottom: 24px;
+    cursor: pointer;
 }
 .Test-chevron-p,.Test-clear{
     margin-right: 28px;
@@ -33,6 +34,7 @@
     border: none;
     background-color: #d9534f;
     margin-bottom: 24px;
+    cursor: pointer;
 }
 .Test-button{
     color: #fff;
@@ -41,6 +43,7 @@
     font-size: 1.5rem;
     border: none;
     margin:0 16px 16px 0;
+    cursor: pointer;
 }
 
 .Test-end{
@@ -56,6 +59,7 @@
     margin-right: 20px;
     background-color: cadetblue;
     text-decoration: none;
+    cursor: pointer;
 }
 
 @media (max-width:550px){

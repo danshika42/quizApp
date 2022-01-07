@@ -9,7 +9,7 @@ function Home() {
     return (
         <div className='Home'>
             <h1  className='Home-heading2'>Hola! {name!=''?name:'User'}</h1>
-            <input className='Home-input' type='text' 
+            <input  className='Home-input' type='text' 
                     placeholder='Enter your name'
                     value={name}
                     onChange={(e)=>handleName(e.target.value)} /><br/>
@@ -19,3 +19,4 @@ function Home() {
 }
 
 export default Home
+         

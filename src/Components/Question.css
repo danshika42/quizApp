@@ -8,6 +8,7 @@
     font-size: 1rem;
     border: none;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 .Question-list{
     list-style: none;
