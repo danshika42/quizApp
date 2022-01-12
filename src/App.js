@@ -12,6 +12,7 @@ function App() {
         <Routes>
           <Route path='quizApp' element={<Home/>} />
           <Route path='quizApp/test' element={<Test/>}/>
+          <Route path='*' element={<Home/>}  />
         </Routes>
       </div>
     </ScoreProvider>

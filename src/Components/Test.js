@@ -11,17 +11,18 @@ function Test() {
   
   const [index,setIndex]=useState(0);
 
-  const [question,setQuestion]=useState(questions[0]);
-  useEffect(()=>{
-    setQuestion(questions[index]);
-  },[index]);
+  // const [question,setQuestion]=useState(questions[0]);
+  
+  // useEffect(()=>{
+  //   setQuestion(questions[index]);
+  // },[index]);
 
   
   const [flag,setFlag]=useState(new Array(questions.length).fill(false));
   const handleFlag=(index)=>{
     setFlag(
     flag.map((ele,num)=>{
-    if(num==index)
+    if(num===index)
      return !ele;
     else
      return ele;
@@ -33,7 +34,7 @@ function Test() {
   const handleAttempted=(index)=>{
     setAttempted(
     attempted.map((ele,num)=>{
-    if(num==index)
+    if(num===index)
      return true;
     else
      return ele;
@@ -45,7 +46,6 @@ function Test() {
     questions[index].answerOptions.map((ansopt)=>{
       ansopt.isAttempted=false;
     })
-
     if(scoreArr.has(index))
     scoreArr.delete(index);
   
@@ -92,43 +92,43 @@ function Test() {
             <>
               <div className='Test-wrapper'>
                   { minutes === 0 && seconds === 0 ? (
-                      <React.Fragment>
+                      <>
                         {setToggle(!toggle)}
-                      </React.Fragment>
+                      </>
                   ) : (
-                      <React.Fragment>
+                      <>
                           <h1 className='Test-clock'>{minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
-                      </React.Fragment>
+                      </>
                   )}
               </div>
             </>
            
             <span className='Test-index'>{`${index+1}/${questions.length}`}</span>
            
-            <Question question={question} index={index} handleAttempted={handleAttempted}/>
+            <Question question={questions[index]} index={index} handleAttempted={handleAttempted}/>
            
             <button 
                 className='Test-chevron-p' 
                 onClick={()=>index!==0 && setIndex(index-1) }>
-                  <i class="fas fa-chevron-left"></i>
+                  <i className="fas fa-chevron-left"></i>
             </button>
            
             <button 
                 className='Test-chevron-n'
                 onClick={()=>index<questions.length-1 && setIndex(index+1) }>
-                  <i class="fas fa-chevron-right"></i>
+                  <i className="fas fa-chevron-right"></i>
             </button><br/>
            
             <button 
                 className='Test-clear' 
                 onClick={()=>handleClear()}>
-                  <i class="fas fa-broom"></i>Clear
+                  <i className="fas fa-broom"></i>Clear
             </button>
             
             <button 
                 className='Test-flag' 
                 onClick={()=>handleFlag(index)}>
-                  <i class="far fa-flag"></i>Flag
+                  <i className="far fa-flag"></i>Flag
             </button><br/>
            
             <button className='Test-submit' onClick={()=>{setToggle(!toggle) ; swal("Quiz Submitted!", {

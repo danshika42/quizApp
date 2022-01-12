@@ -1,6 +1,8 @@
 import React ,{useContext} from 'react'
 import {ScoreContext} from './ScoreContext'
 import './Question.css'
+import {v4 as uuid} from 'uuid'
+
 
 function Question({question,index,handleAttempted}) {
     const {scoreArr}=useContext(ScoreContext);
@@ -14,10 +16,13 @@ function Question({question,index,handleAttempted}) {
        
         handleAttempted(index);
        
-        question.answerOptions.map((ansopt)=>{
+        question.answerOptions.map((ansopt,num)=>{
+            if(num===opt)
+            ansopt.isAttempted=true;
+            else
             ansopt.isAttempted=false;
         })
-        question.answerOptions[opt].isAttempted=true;   
+       
     }
 
     return (
@@ -27,11 +32,12 @@ function Question({question,index,handleAttempted}) {
                 {
                     question.answerOptions.map(
                         (option,opt)=>(
-                        <li>
+                        <li key={uuid()} >
                             <button 
+                            onClick={()=>{updateArr(question.correctOption,opt)}}
                             style={{backgroundColor:option.isAttempted?'#4CAF50':'cadetblue'}} 
                             className='Question-option' 
-                            onClick={()=>{updateArr(question.correctOption,opt)}}>
+                            >
                                 {option.answerText}
                             </button>
                         </li>

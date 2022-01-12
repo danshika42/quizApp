@@ -8,7 +8,7 @@ function Home() {
     const {handleName,name}=useContext(ScoreContext);
     return (
         <div className='Home'>
-            <h1  className='Home-heading2'>Hola! {name!=''?name:'User'}</h1>
+            <h1  className='Home-heading2'>Hola! {name!==''?name:'User'}</h1>
             <input  className='Home-input' type='text' 
                     placeholder='Enter your name'
                     value={name}
