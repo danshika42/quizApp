@@ -9,15 +9,19 @@
 }
 .Home-input{
     padding: 12px 23px;
-    border: solid 2px cadetblue;;
+    border: solid 2px cadetblue;
     border-radius: 0.3rem;
     background: none;
     margin: 24px 0 48px 0;
+    color: #fff;
+    font-size: 1.2rem;
 }
+
 .Home-input::placeholder,.Home-input:focus{
     color: #fff;
     font-family: 'Sen', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    transition: 0.3s ease-out
 }
 
 .Home-start{

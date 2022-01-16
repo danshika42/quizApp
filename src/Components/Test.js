@@ -7,7 +7,7 @@ import {v4 as uuid} from 'uuid'
 import './Test.css'
 
 function Test() {
-  const {handleScore,scoreArr,score,name,questions} =useContext(ScoreContext);
+  const {handleScore,scoreArr,score,name,handleName,questions} =useContext(ScoreContext);
   
   const [index,setIndex]=useState(0);
 
@@ -75,7 +75,7 @@ function Test() {
 
   const [toggle,setToggle]=useState(false);
   useEffect(()=>{
-    handleScore();  
+    handleScore(); 
   },[toggle])
   
   if(toggle){
@@ -122,19 +122,20 @@ function Test() {
             <button 
                 className='Test-clear' 
                 onClick={()=>handleClear()}>
-                  <i className="fas fa-broom"></i>Clear
+                  <i className="fas fa-broom"></i> Clear
             </button>
             
             <button 
                 className='Test-flag' 
                 onClick={()=>handleFlag(index)}>
-                  <i className="far fa-flag"></i>Flag
+                  <i className="far fa-flag"></i>  Flag
             </button><br/>
            
             <button className='Test-submit' onClick={()=>{setToggle(!toggle) ; swal("Quiz Submitted!", {
               icon: "success",
-            }); }} >submit</button>
+            }); }} >Submit</button>
             <br/>
+            
               {
                 questions.map((question,opt)=>
                   <button 

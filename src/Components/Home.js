@@ -13,7 +13,7 @@ function Home() {
                     placeholder='Enter your name'
                     value={name}
                     onChange={(e)=>handleName(e.target.value)} /><br/>
-            <NavLink  className='Home-start' to='test' >Start</NavLink>
+            <NavLink accessKey='s'  className='Home-start' to='test' >Start</NavLink>
         </div>
     )
 }
