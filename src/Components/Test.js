@@ -82,7 +82,7 @@ function Test() {
     return(
       <>
             <h1 className='Test-end'> {name===''?'No Name 🥱':name} ,Your score {score}</h1>
-            <NavLink className='Test-retry'  to='/quizApp' >Retry</NavLink>
+            <NavLink className='Test-retry'  to='/' >Retry</NavLink>
       </>
     )
   }
